@@ -1,0 +1,31 @@
+<template>
+    <lightning-card  title="Get Account info from MicroService">
+    <lightning-button variant="brand" icon-name="utility:apex_plugin" icon-position="right" label="Recuperar info del microservicio" title="traer la integración" onclick={handleSearch} class="slds-m-left_x-small"></lightning-button>
+        <template if:true={areDetailsVisible}>
+            <lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="horizontal-medium">
+                    <br>
+                    <p><lightning-formatted-text id = "resourceIdLabel" value="Account Id in Microservice" ></lightning-formatted-text></p>
+                    <p><lightning-formatted-text id = "resourceId" value={AcountMicroservice} ></lightning-formatted-text></p>
+                    <br>
+                    <p><lightning-formatted-text id = "nameLabel" value="Name" ></lightning-formatted-text></p>
+                    <p><lightning-formatted-text id = "name" value={transactionsDetails.name} ></lightning-formatted-text></p>
+                    <br>
+                    <p><lightning-formatted-text id = "balanceTypeLabel" value="Balance Type" ></lightning-formatted-text></p>
+                    <p><lightning-formatted-text id = "balanceType" value={transactionsDetails.balanceType} ></lightning-formatted-text></p>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" padding="horizontal-medium">
+                    <br>
+                    <p><lightning-formatted-text id = "currencyLabel" value="Currency" ></lightning-formatted-text></p>
+                    <p><lightning-formatted-text label="currency" id = "currency" value={amount.currency} ></lightning-formatted-text></p>
+                    <br>
+                    <p><lightning-formatted-text id = "amountLabel" value="Amount" ></lightning-formatted-text></p>
+                    <p><lightning-formatted-text id = "amount" value={amount.amount} ></lightning-formatted-text></p>
+                    <br>
+                    <p><lightning-formatted-text id = "transactionDateLabel" value="Transaction Date" ></lightning-formatted-text></p>
+                    <p><lightning-formatted-text id = "transactionDate" value={transactionsDetails.transactionDate} ></lightning-formatted-text></p>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+    </lightning-card>
+</template>
